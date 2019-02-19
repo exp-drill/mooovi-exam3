@@ -7,11 +7,12 @@ class ReviewsController < RankingController
   end
 
   def create
-    Review.create(create_params)
+    review = Review.create(create_params)
+    redirect_to product_path(review.product_id)
   end
 
   private
   def create_params
-    params.permit(:rate, :review).merge(product_id: params[:product_id], user_id: current_user.id)
+    params.require(:review).permit(:rate, :review).merge(product_id: params[:product_id], user_id: current_user.id)
   end
 end

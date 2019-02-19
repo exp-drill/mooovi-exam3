@@ -2,7 +2,7 @@
   <header class="user_page-header">
     <div class="yjContainer">
       <a href="">
-        <div class="user_image"><%= current_user.avatar %></div>
+        <div class="user_image"><%= image_tag current_user.avatar %></div>
         <h2><%=  current_user.nickname %> <span>さんのマイページ</span></h2>
       </a>
     </div>
@@ -18,7 +18,7 @@
                     <div class="title"><%= review.product.title %></div>
                     <span class="star"><span class="rating-star"><i class="star-actived rate-<%= review.rate %>0"></i></span></span>
                   </header>
-                  <div class="user_review"><%= review.review %></div>
+                    <div class="user_review"><%= review.text %></div>
                 </div>
               </li>
             <% end %>

@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  has_many :reviews
+  has_many :review
 
   def review_average
     self.reviews.average(:rate).round
